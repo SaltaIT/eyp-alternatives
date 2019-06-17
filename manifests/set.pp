@@ -5,7 +5,7 @@ define alternatives::set(
   Exec {
     path => '/bin:/sbin:/usr/bin:/usr/sbin',
   }
-  
+
   include ::alternatives
 
   exec { "set ${alternative_name} alternatives ${path}":

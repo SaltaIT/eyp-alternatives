@@ -10,7 +10,7 @@ define alternatives::install (
 
   include ::alternatives
 
-  exec { "update alternatives ${basedir}/jre-${version}":
+  exec { "update alternatives ${alternative_name} ${alternative_path} ${path}":
     command => "${alternatives::params::alternatives_cmd} --install ${alternative_path} ${alternative_name} ${path} ${priority}",
     require => Class['::alternatives'],
     unless  => "${alternatives::params::check_alternatives} ${alternative_name} | grep ${path}",
