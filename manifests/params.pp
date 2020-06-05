@@ -32,7 +32,7 @@ class alternatives::params {
             default: { fail("Unsupported Ubuntu version! - ${::operatingsystemrelease}")  }
           }
         }
-        'Debian': { fail('Unsupported')  }
+        'Debian': { }
         default: { fail('Unsupported Debian flavour!')  }
       }
     }
